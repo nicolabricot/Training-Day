@@ -40,43 +40,43 @@ class Computer {
 		return $this->type;
 	}
 	public function setType($str){
-		$this->type = $str;
+		$this->type = (string) $str;
 	}
 	public function getGpu(){
 		return $this->gpu;
 	}
 	public function setGpu($str){
-		$this->gpu = $str;
+		$this->gpu = (string) $str;
 	}
 	public function getCpu(){
 		return $this->cpu;
 	}
 	public function setCpu($str){
-		$this->cpu = $str;
+		$this->cpu = (string) $str;
 	}
 	public function getRam(){
 		return $this->ram;
 	}
 	public function setRam($str){
-		$this->ram = $str;
+		$this->ram = (string) $str;
 	}
 	public function getScreen(){
 		return $this->screen;
 	}
 	public function setScreen($str){
-		$this->screen = $str;
+		$this->screen = (string) $str;
 	}
 	public function getDrive(){
 		return $this->drive;
 	}
 	public function setDrive($str){
-		$this->drive = $str;
+		$this->drive = (string) $str;
 	}
 	public function getOptique(){
 		return $this->optique;
 	}
 	public function setOptique($str){
-		$this->optique = $str;
+		$this->optique = (string) $str;
 	}
 }
 ?>

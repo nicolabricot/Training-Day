@@ -5,8 +5,10 @@ use lib\db\DataBase;
  * @author Karl
  */
 class Team {
+    private $id = 0;
 	private $name;
 	private $description;
+	private array $players;
 
 	public __construct(){
 	}
@@ -25,21 +27,31 @@ class Team {
         }
 	}
 
+	public function addPlayer(User $user){
+		$this->players[] = $user;
+	}
+	public function getPlayers(){
+		return $this->players;
+	}
+	public 
 	public function getName(){
 		return $this->name;
 	}
 	public function setName($str){
-		$this->name = $str;
+		$this->name = (string) $str;
 	}
 	public function getDescription(){
 		return $this->name;
 	}
 	public function setDescription($str){
-		$this->name = $str;
+		$this->name = (string) $str;
+	}
+	public function countPlayers(){
+		return count($this->players);
 	}
 
-	public static function countPlayers(){
-	    $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM user_data');
+	public static function countTeams(){
+	    $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM team');
 		$req->execute();
 		$count = $req->fetchColumn();
 		$req->closeCursor();

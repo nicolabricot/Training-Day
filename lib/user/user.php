@@ -62,7 +62,7 @@ class User {
         return $this->surname;
     }
     public function setSurname($surname){
-        $this->surname = $surname;
+        $this->surname = (string) $surname;
     }
     public function getMail() {
         return $this->mail;
@@ -94,6 +94,14 @@ class User {
                 return true;
         }
         return false;
+    }
+
+    public static function countUsers(){
+        $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM user_data');
+        $req->execute();
+        $count = $req->fetchColumn();
+        $req->closeCursor();
+        return $count;
     }
 }
 

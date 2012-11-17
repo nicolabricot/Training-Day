@@ -43,6 +43,7 @@ $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="viewport" content="width=device-width" />
         <meta name="robots" content="index, follow, archive" />
+        <meta name="keywords" content="EnsiLAN, ENSISA, Nuit de l'info, Mulhouse , ingénieur, training-day"/>
         
         <title><?php if(!empty($subTitle)) {echo $subTitle, ' &ndash; ';} ?>EnsiLAN</title>
         

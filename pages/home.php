@@ -18,5 +18,5 @@
 <aside class="event">
     <h3>Prochaine LAN</h3>
     <h4>22 novembre 2012<br />8h à 19h</h4>
-    <a href="#"><img src="/uploads/pages/home_inscription_min.png" alt="inscription" /></a>
+    <a href="mailto:xid[at]ensisa.info"><img src="/uploads/pages/home_inscription_min.png" alt="inscription" /></a>
 </aside>

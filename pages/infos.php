@@ -8,7 +8,7 @@
     <article>
         <h3>Quand ?</h2>
         <p>La prochaine LAN se déroulera le 22 novembre 2012 de 8h à 19h à l’ENSISA Lumière !</p>
-        <p><a href="#">Inscrivez-vous dès maintenant !</a></p>
+        <p><a href="maitlo:xid[at]ensisa.info">Inscrivez-vous dès maintenant !</a></p>
     </article>
     <article>
         <h3>Où ?</h3>
@@ -31,7 +31,6 @@
             <li>Possibilité de se restaurer à la K'fet Lumière (Pizza, boisson, ...)</li>
             <li>Début des tournois à 19h, venez en avance si vous voulez avoir le temps de vous installer tranquillement</li>
             <li>De nombreuses animations tout au long de la soirée !</li>
-            <li>Pour vous inscrire dès maintenant, cliquez <a href="#">ici</a></li>
         </ul>
     </article>
 </section>

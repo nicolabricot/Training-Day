@@ -123,6 +123,9 @@ header nav#header-menu a {
 #content p {
     margin: .5em 0;
 }
+#content h2 {
+    font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 footer {
     margin: 20px auto;

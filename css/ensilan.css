@@ -135,6 +135,9 @@ header nav#header-menu a {
     font-weight: normal;
     color: #c42d2d;
 }
+#content section article {
+    margin: 1em 0;
+}
 #content section.aside {
     width: 65%;
     float: left;

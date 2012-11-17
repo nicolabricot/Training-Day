@@ -7,19 +7,16 @@
 <section>
     <article>
         <h3>Quand ?</h2>
-        <p>
-        La prochaine LAN se déroulera le 22 novembre 2012 de 8h à 19h à l’ENSISA Lumière !<br />
-        <a href="#">Inscrivez-vous dès maintenant !</a>
-        </p>
-        <address>
-        École Nationale Supérieure d'Ingénieurs Sud-Alsace<br />
-        12 Rue des Frères Lumière<br />
-        68093 Mulhouse<br />
-        Tél : 03 89 33 69 00
-        </address>
+        <p>La prochaine LAN se déroulera le 22 novembre 2012 de 8h à 19h à l’ENSISA Lumière !</p>
+        <p><a href="#">Inscrivez-vous dès maintenant !</a></p>
     </article>
     <article>
         <h3>Où ?</h3>
+        <p><address>École Nationale Supérieure d'Ingénieurs Sud-Alsace<br />
+            12 Rue des Frères Lumière<br />
+            68093 Mulhouse<br />
+            Tél : 03 89 33 69 00</address>
+        </p>
         <script>
           map = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"'+
                 'src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=ensisa&amp;sll=4'+

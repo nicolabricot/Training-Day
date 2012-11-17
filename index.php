@@ -22,7 +22,7 @@ $_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
 $masterMenuLinks = array('home' => 'Accueil',
                          'games' => 'Jeux',
                          'tournaments' => 'Tournois',
-                         'infos' => 'Infos Pratiques');
+                         'infos' => 'Infos pratiques');
 $masterMenu = new Menu();
 foreach($masterMenuLinks as $page => $title){
     $masterMenu->addlink($title, $page, ($_GET['page'] == $page));

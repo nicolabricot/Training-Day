@@ -1,3 +1,7 @@
+<?php
+    $subTitle = 'Infos pratiques';
+?>
+
 <section>
     <article>
         <h2>EnsiLAN, c'est...</h2>

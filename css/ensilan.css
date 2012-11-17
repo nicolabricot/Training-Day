@@ -1,4 +1,15 @@
 
 body {
+    width: 900px;
+    margin: auto;
     font-family: "Helvectica Neue", Helvetica, Arial, sans-serif;
+}
+
+header h1 a {
+    display: block;
+    width: 900px;
+    height: 250px;
+    margin: 0;
+    text-indent: -9000px;
+    background: url('/img/ensilan.png') center top no-repeat;
 }

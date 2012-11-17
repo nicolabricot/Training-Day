@@ -10,9 +10,9 @@
 	?>
     <article>
         <img src="<?php echo Image::thumb('250', '360', 'uploads/', $tournament->getGame()->getCover(), 'fill'); ?>" alt="" />
-        <div class="titre"></div>
-        <div class="ss-titre"></div>
-        <div class="description"></div>
+        <div class="name"><?php echo $tournament->getName(); ?></div>
+        <div class="ss-name">Jeu : <?php echo $tournament->getGame()->getName(); ?></div>
+        <div class="description"><?php echo $tournament->getDescription(); ?></div>
     </article>
 	<?php
 	}

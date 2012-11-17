@@ -41,7 +41,7 @@ class Tournament {
 	}
 	private function loadSchedules(){
 		$req = DataBase::getInstance()->prepare('SELECT start, stop FROM tournament_schedule WHERE tournament = :id');
-    	$req->bindvalue('id', $tournament->getId(), PDO::PARAM_INT);
+    	$req->bindvalue('id', $this->getId(), PDO::PARAM_INT);
     	$req->execute();
     	$i = 0;
     	while($datas = $req->fetch()){
@@ -121,7 +121,7 @@ class Tournament {
     	$req->closeCursor();
     	//Horaires associés
     	Schedule::deleteSchedules($tournament->getId());
-		foreach($this->schedules as $schedule){
+		foreach($tournament->getSchedules() as $schedule){
 			Schedule::saveSchedule($tournament->getId(), $schedule);
 		}
 	}

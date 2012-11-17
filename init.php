@@ -44,6 +44,9 @@ $l4dTour->addSchedule('Après-Midi', new Schedule(1353589200, 1353603600)); //22
 $l4dTour->setName('Tournois Battlefield 3');
 $l4dTour->setDescription('Survie 4vs4 en 5 manches sur carte aléatoire - Equipes de 4 personnes - Jeu fourni sur place');
 
+Tournament::saveTournament($bf3Tour);
+Tournament::saveTournament($l4dTour);
+
 //Test des elements utilisés dans le frontend
 
 $gamesList = Game::getGames();

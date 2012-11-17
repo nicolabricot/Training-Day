@@ -1,5 +1,5 @@
 <?php
-namespace lib\user;
+namespace lib\lan;
 /**
  * @author Karl
  */

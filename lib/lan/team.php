@@ -1,5 +1,5 @@
 <?php
-namespace lib\user;
+namespace lib\lan;
 use lib\db\DataBase;
 use lib\user\User;
 /**

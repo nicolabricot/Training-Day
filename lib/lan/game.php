@@ -1,5 +1,5 @@
 <?php
-namespace lib\user;
+namespace lib\lan;
 use lib\db\DataBase;
 /**
  * @author Karl
@@ -30,12 +30,6 @@ class Game {
 
 	public function getId(){
 		return $this->id;
-	}
-	public function addPlayer(User $user){
-		$this->players[] = $user;
-	}
-	public function getPlayers(){
-		return $this->players;
 	}
 	public function getName(){
 		return $this->name;

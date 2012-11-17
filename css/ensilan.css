@@ -139,7 +139,7 @@ header nav#header-menu a {
     margin: 1em 0;
 }
 
-#content section article {
+#content section.games article {
     clear: both;
 }
 #content section.games img {

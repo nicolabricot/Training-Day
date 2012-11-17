@@ -30,6 +30,8 @@ $l4d->setName('Left for Dead');
 $l4d->setDescription('Left 4 Dead sur PC est un FPS horrifique basé en grande partie sur la coopération. En effet, vous incarnez un personnage dans un groupe de quatre, mais les trois autres peuvent être dirigés par des amis. Echappez aux zombies en veillant donc les uns sur les autres. Pour corser le tout, le jeu offre la possibilité à quatre autres joueurs d\'incarner des morts-vivants pour sillonner la ville et traquer les héros.');
 $l4d->setCover('l4d.jpg');
 
-
+Game::saveGame($bf3);
+Game::saveGame($gw2);
+Game::saveGame($l4d);
 
 ?>

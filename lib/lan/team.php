@@ -1,6 +1,7 @@
 <?php
 namespace lib\lan;
 use lib\db\DataBase;
+use PDO;
 use lib\user\User;
 /**
  * @author Karl

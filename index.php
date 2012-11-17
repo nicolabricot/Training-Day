@@ -74,7 +74,7 @@ $contentPage = file_exists($contentPage)?$contentPage:'pages/404.php';
         
         <footer>
             <p>
-                <span><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
+                <span><a href="http://blog.training-day.iariss.fr">Training Day</a> organisé par le <a href="http://xid.ensisa.info/training-day">XID</a>.
                 <br />&copy; 2012 &ndash; EnsiLAN par l'équipe <img src="/favicon.png" alt="PacMan" width="16" height="16" /> <a href="/mentions">FKNQR&sup2;</a></p>
                 </span>
         </footer>

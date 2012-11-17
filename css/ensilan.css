@@ -143,12 +143,17 @@ header nav#header-menu a {
     clear: both;
 }
 #content section.games img {
+    margin: 5px 20px 5px 0;
     float: left;
 }
 #content section.games name {
+    margin: 5px 20px;
     float: right;
+    font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
 }
 #content section.games description {
+    margin: 5px 20px;
     float: right;
 }
 

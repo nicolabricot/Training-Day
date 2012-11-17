@@ -14,7 +14,7 @@ class DataBase {
         if(!isset(self::$instance)){
             $cfgFile = 'config/database.xml';
             if(!file_exists($cfgFile)){
-                $xmlOut = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root>\n\t<dsn>mysql:host=localhost;dbname=taches</dsn>\n\t<login>root</login>\n\t<password></password>\n</root>";
+                $xmlOut = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root>\n\t<dsn>mysql:host=10.57.110.37;dbname=taches</dsn>\n\t<login>root</login>\n\t<password></password>\n</root>";
                 $xmlFile = fopen($cfgFile, 'w');
                 fwrite($xmlFile,$xmlOut);
                 fclose($xmlFile);

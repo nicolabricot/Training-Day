@@ -47,7 +47,8 @@ $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="viewport" content="width=device-width" />
         <meta name="robots" content="index, follow, archive" />
-        <meta name="keywords" content="EnsiLAN, ENSISA, Nuit de l'info, Mulhouse , ingénieur, training-day"/>
+        <meta name="keywords" content="EnsiLAN, ENSISA, Nuit de l'info, Mulhouse , ingénieur, training-day" />
+        <meta name="description" content="EnsiLAN, le site d'organisation des LANs de l’ENSISA par le XID !" />
         
         <title>EnsiLAN</title>
         

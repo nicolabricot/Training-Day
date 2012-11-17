@@ -138,6 +138,20 @@ header nav#header-menu a {
 #content section article {
     margin: 1em 0;
 }
+
+#content section article {
+    clear: both;
+}
+#content section.games img {
+    float: left;
+}
+#content section.games name {
+    float: right;
+}
+#content section.games description {
+    float: right;
+}
+
 #content section.aside {
     width: 65%;
     float: left;

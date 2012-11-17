@@ -28,9 +28,9 @@
 	<footer>
             <p>
                 <span><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
-                <br />&copy; 2012 &ndash; EnsiLAN par l'équipe FKNQR&sup2;</p>
+                <br />&copy; 2012 &ndash; EnsiLAN par l'équipe <img src="/favicon.png" alt="PacMan" width="16" height="16" /> <a href="/mentions">FKNQR&sup2;</a></p>
                 </span>
-    </footer>
+        </footer>
 	  
 </body>
 </html>

@@ -1,7 +1,6 @@
 html {font-size: 100%;}
-body{text-align:center;margin:0px;}
-body{background-color:#2B5797}
-#header-menu{background-color:#1d1d1d;color:white;}
-.event #content{background-color:#603CBA;color:white;}
-footer{background-color:#1d1d1d;color:white;}
-article{background-color:#2D89EF;color:white;}
+body{background-color:#2B5797;text-align:center;margin:0px;}
+#header-menu{background-color:#1d1d1d;color:white;border:2px solid white;}
+.event #content{background-color:#603CBA;color:white;border:2px solid white;}
+footer{background-color:#1d1d1d;color:white;border:2px solid white;}
+article{background-color:#2D89EF;color:white;border:2px solid white;}

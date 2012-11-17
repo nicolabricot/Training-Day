@@ -41,10 +41,10 @@ class Team {
 		$this->name = (string) $str;
 	}
 	public function getDescription(){
-		return $this->name;
+		return $this->description;
 	}
 	public function setDescription($str){
-		$this->name = (string) $str;
+		$this->description = (string) $str;
 	}
 	public function countPlayers(){
 		return count($this->players);

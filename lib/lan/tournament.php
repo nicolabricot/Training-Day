@@ -62,10 +62,6 @@ class Tournament {
 		return $this->game;
 	}
 
-	public function countPlayers(){
-		return count($this->players);
-	}
-
 	public static function countTournaments(){
 	    $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM tournament');
 		$req->execute();

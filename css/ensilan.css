@@ -35,7 +35,7 @@ a:hover, a:focus, a:active {
 }
 
 header {
-    margin: 15px auto;
+    margin-top: 15px;
 }
 
 header h1 {
@@ -121,21 +121,25 @@ header nav#header-menu a {
 }
 
 #content {
-    width: 880px;
-    padding: 10px;
+    width: 856px;
+    padding: 20px;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
 }
 #content p {
     margin: .5em 0;
 }
 #content h2 {
     font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #c42d2d;
 }
 #content h4.event {
     
 }
 
 footer {
-    margin: 20px auto;
+    margin-bottom: 15px;
+    border-top: 1px solid #333;
 }
 footer p {
     height: 90px;
@@ -157,4 +161,7 @@ footer p span {
     line-height: 18px;
     font-size: 14px;
     color: #fff;
+}
+footer a {
+    color: #aaa;
 }

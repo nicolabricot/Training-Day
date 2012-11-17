@@ -11,7 +11,7 @@
 -->
 <section>
     <article>
-        <h2>EnsiLAN, c'est...</h2>
+        <h3>EnsiLAN, c'est...</h3>
         <p> Ce site à pour but de faciliter l'organisation des LANs au sein de l'ENSISA. Vous pourrez ainsi vous inscrire aux différentes 
             LANs organisés durant l'année, vous inscrire aux différents tournois de jeux vidéos, réserver le matériel qui vous sera nécessaire 
             le jour J, et bien plus encore ! Plus d'informations <a href="#">ici</a>.

@@ -1,27 +1,63 @@
+/*
+ * EnsiLAN
+ * version 0.2
+ *
+ * Couleurs
+ * --------
+ * rouge mario : #e70d0d
+ * rouge fond : #c42d2d
+ * bleu fond : #635fac
+ * bleu sonic : #2424b0
+ */
+
 
 body {
+    margin: 0 auto;
+    font-family: "Open Sans", "Helvectica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    background: url('/img/paper.png') left top repeat;
+}
+
+header, #content, footer {
     width: 900px;
     margin: auto;
-    font-family: "Helvectica Neue", Helvetica, Arial, sans-serif;
+    clear: both;
+}
+
+a {
+    color: #2424b0;
+    text-decoration: none;
+    border: none;
+}
+a:hover, a:focus, a:active {
+    text-decoration: underline;
+}
+
+header {
+    margin: 15px auto;
+}
+
+header h1 {
+    margin: 0;
 }
 
 header h1 a {
     display: block;
     width: 900px;
     height: 250px;
-    margin: 20px 0;
+    margin: 0;
     text-indent: -9000px;
-    background: url('/img/ensilan.png') center top no-repeat;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
+    background: url('/img/ensilan.png') left top no-repeat;
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -o-border-radius: 15px 15px 0 0;
     box-shadow: 0 0 10px #666;
     -webkit-box-shadow: 0 0 10px #666;
     -moz-box-shadow: 0 0 10px #666;
     -o-box-shadow: 0 0 10px #666;
 }
-
 header h1 a:hover,
 header h1 a:focus,
 header h1 a:active {
@@ -30,4 +66,64 @@ header h1 a:active {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
+}
+
+header nav#header-menu ul {
+    margin: 0;
+    padding: 0 5px;
+    overflow: hidden;
+    list-style-type: none;
+    background: #000;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+        color-stop( 0.0, rgb(89, 89, 89) ),
+        color-stop( 0.000, rgb(90, 90, 90) ),
+        color-stop( 1.0, rgb(0, 0, 0) ));
+    background-image: -webkit-linear-gradient(top,
+        rgb(89, 89, 89), 
+        rgb(90, 90, 90) 0.0%,
+        rgb(0, 0, 0) );
+    background-image: -moz-linear-gradient(top,
+        rgb(89, 89, 89), 
+        rgb(90, 90, 90) 0.0%,
+        rgb(0, 0, 0) );
+    background-image: -ms-linear-gradient(top,
+        rgb(89, 89, 89), 
+        rgb(90, 90, 90) 0.0%,
+        rgb(0, 0, 0) );
+    background-image: -o-linear-gradient(top,
+        rgb(89, 89, 89), 
+        rgb(90, 90, 90) 0.0%,
+        rgb(0, 0, 0) );
+    background-image: linear-gradient(top,
+        rgb(89, 89, 89), 
+        rgb(90, 90, 90) 0.0%,
+        rgb(0, 0, 0) );
+}
+header nav#header-menu a {
+    display: block;
+    float: left;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+}
+
+#content {
+    width: 880px;
+    padding: 10px;
+    border: 1px solid red;
+}
+#content p {
+    margin: .5em 0;
+}
+
+footer {
+    margin: 20px auto;
+    padding-top: 5px;
+    border-top: 1px solid #2424b0;
+}
+footer p {
+    margin: 0 0 .5em 0;
+    font-size: 14px;
+    line-height: 18px;
 }

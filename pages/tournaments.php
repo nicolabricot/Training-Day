@@ -1,7 +1,3 @@
-<?php
-    $subTitle = 'Tournois';
-?>
-
 <h2>Tournois</h2>
 
 <section class="game">

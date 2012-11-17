@@ -1,4 +1,4 @@
-########################################################
+﻿########################################################
 ########################################################
 ################**Equipe IARISS**#######################
 ########################################################
@@ -17,7 +17,7 @@ L'équipe est composé de cinq élèves de 1ère et 2ème années :
 - DENAUX Robin
 
 
-Le sujet était : " Tournoi de Jeux-Vidéo"
+Le sujet était : "Tournoi de Jeux-Vidéo"
 Nous avons donc créer un site "EnsiLAN"
 Ce site sera le plateau du jeu en LAN de l'Ensisa , chaque personne pourra se créé un compte sur le site, il pourra renseigner 
 ses informations le concernant. Ce site accueille dse tournois de jeux-vidéo. Chaque utilisateurs pourra s'insrire pour les 

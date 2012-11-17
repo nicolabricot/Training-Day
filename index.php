@@ -14,7 +14,7 @@ $_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
 $masterMenuLinks = array('home' => 'Accueil',
                          'games' => 'Jeux',
                          'tournaments' => 'Tournois',
-                         'infos' => 'Infos-Pratiques');
+                         'infos' => 'Infos Pratiques');
 $masterMenu = new Menu();
 foreach($masterMenuLinks as $page => $title){
     $masterMenu->addlink($title, $page, ($_GET['page'] == $page));
@@ -48,7 +48,7 @@ $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
     <body>
         
         <header>
-            <h1><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
+            <h1><?php if(!empty($subTitle)) {echo $subTitle, ' &ndash; ';} ?><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
             <nav id="header-menu">
                 <?php echo $masterMenu; ?>
             </nav>

@@ -110,10 +110,10 @@ CREATE TABLE IF NOT EXISTS team_inscription (
         REFERENCES team (id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET = utf8;
 
-CREATE TABLE IF NOT EXISTS schedule (
-    tournament       int                    NOT NULL,
-    start            int                    NOT NULL,
-    stop             int                    NOT NULL,
+CREATE TABLE IF NOT EXISTS tournament_schedule (
+    tournament      int                     NOT NULL,
+    start           int                     NOT NULL,
+    stop            int                     NOT NULL,
     PRIMARY KEY (tournament, start, stop),
     FOREIGN KEY (tournament) 
         REFERENCES tournament (id) ON UPDATE CASCADE ON DELETE CASCADE

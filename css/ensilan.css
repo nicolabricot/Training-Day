@@ -139,22 +139,35 @@ header nav#header-menu a {
     margin: 1em 0;
 }
 
+#content section.tournaments article,
 #content section.games article {
     clear: both;
+    overflow:hidden;
 }
+#content section.tournaments img,
 #content section.games img {
+    display: block;
     margin: 5px 20px 5px 0;
     float: left;
 }
+#content section.tournaments .name,
 #content section.games .name {
-    margin: 5px 20px;
-    float: right;
+    margin: 20px 20px;
     font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 24px;
+    width: 600px;
 }
+#content section.tournaments .ss-name {
+    margin: 20px 20px;
+    font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #909090;
+    width: 600px;
+}
+#content section.tournaments .description,
 #content section.games .description {
     margin: 5px 20px;
-    float: right;
+    width: 600px;
 }
 
 #content section.aside {

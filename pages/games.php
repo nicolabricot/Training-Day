@@ -9,7 +9,7 @@
 	    <article>
 	        <img src="<?php echo Image::thumb('250', '360', 'uploads/', $game->getCover(), 'fill'); ?>" alt="" />
 	        <div class="name"><?php echo $game->getName(); ?></div>
-	        <div class="description"><?php echo $game->getDescription(); ?></div>
+	        <p class="description"><?php echo $game->getDescription(); ?></p>
 	    </article>
 	<?php
 	}

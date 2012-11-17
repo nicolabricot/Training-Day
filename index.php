@@ -19,6 +19,12 @@ foreach($masterMenuLinks as $page => $title){
     $masterMenu->addlink($title, $page, ($_GET['page'] == $page));
 }
 
+// Contenu de la page
+str_replace("\0", '', $_GET['page']); //Protection bytenull
+str_replace(DIRECTORY_SEPARATOR, '', $_GET['page']); //Protection navigation
+$contentPage = $_GET['page'].'.php';
+$contentPage = file_exists($contentPage)?$contentPage:'errors/404';
+
 //DEBUG
 
 var_dump($_GET);
@@ -53,7 +59,7 @@ var_dump($_POST);
         </header>
         
         <div id="content">
-            <p>Hello world !</p>
+            <?php include($urlPage); ?>
         </div>
         
         <footer>

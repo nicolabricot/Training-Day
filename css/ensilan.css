@@ -62,12 +62,20 @@ header h1 a:hover,
 header h1 a:focus,
 header h1 a:active {
     box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 0 20px #000;
+    -moz-box-shadow: 0 0 20px #000;
+    -o-box-shadow: 0 0 20px #000;
     transition: all 2s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
 }
-
+header nav {
+    box-shadow: 0 0 10px #666;
+    -webkit-box-shadow: 0 0 10px #666;
+    -moz-box-shadow: 0 0 10px #666;
+    -o-box-shadow: 0 0 10px #666;
+}
 header nav#header-menu ul {
     margin: 0;
     padding: 0 5px;
@@ -127,6 +135,10 @@ footer p {
     -webkit-border-radius: 0 0 15px 15px;
     -moz-border-radius: 0 0 15px 15px;
     -o-border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 10px #666;
+    -webkit-box-shadow: 0 0 10px #666;
+    -moz-box-shadow: 0 0 10px #666;
+    -o-box-shadow: 0 0 10px #666;
     background: url('/img/footer.png') left top no-repeat;
 }
 footer p span {
@@ -136,4 +148,5 @@ footer p span {
     vertical-align: middle;
     line-height: 18px;
     font-size: 14px;
+    color: #fff;
 }

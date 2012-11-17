@@ -8,31 +8,29 @@
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> 
 	<link rel="icon" type="image/png" href="/favicon.png" />
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!--<link rel="stylesheet" href="/css/erreurs.css" media="all" />-->
+    <link rel="stylesheet" media="screen" href="/css/style.css" />
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE" />
   </head>
 
   <body>
-	<header>
-	  <div>
-		<h1><a href="/">ensilan.com</a></h1>
-	  </div>
-	</header>
-	  
+        <header>
+            <h1><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
+		</header>
+	 
+	 <div id="content">
 	<article>
 	  <h2>Erreur 401 : Non Autorisé — Unauthorized</h2>
 	  <h3>Oups ! L’accès à la ressource n’est pas autorisé car le serveur exige une identification de l’utilisateur.</h3>
 	  <p>Si le problème persite, vous pouvez m’envoyer un courriel à <a href="mailto:ensilan[at]ensisa.info"><code>ensilan[at]ensisa.info</code></a>.</p>
 	</article>
+</div>
 	  
 	<footer>
-	  <nav>
-		<ul>
-		  <li><a href="/">EnsiLAN</a></li>
-		  <li><a href="/contact">Contact</a></li>
-		</ul>
-	  </nav>
-	</footer>
+            <p>
+                <span><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
+                <br />&copy; 2012 &ndash; EnsiLAN par l'équipe FKNQR&sup2;</p>
+                </span>
+        </footer>
 	  
 </body>
 </html>

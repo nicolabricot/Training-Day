@@ -34,4 +34,23 @@ Game::saveGame($bf3);
 Game::saveGame($gw2);
 Game::saveGame($l4d);
 
+$bf3Tour = new Tournament($bf3);
+$bf3Tour->addSchedule('Matin', new Schedule(1353567600, 1353582000)); //22.11.2012 8h00 - 12h00
+$bf3Tour->setName('Tournois Battlefield 3');
+$bf3Tour->setDescription('Ruée en escouade 4vs4 sur carte aléatoires- Equipes de 4 personnes - Compte BF3 et DLC Close Quarters requis');
+
+$l4dTour = new Tournament($l4d);
+$l4dTour->addSchedule('Après-Midi', new Schedule(1353589200, 1353603600)); //22.11.2012 14h00 - 18h00
+$l4dTour->setName('Tournois Battlefield 3');
+$l4dTour->setDescription('Survie 4vs4 en 5 manches sur carte aléatoire - Equipes de 4 personnes - Jeu fourni sur place');
+
+
+echo 'Succes';
+
+var_dump($bf3);
+var_dump($gw2);
+var_dump($l4d);
+var_dump($bf3Tour);
+var_dump($l4dTour);
+
 ?>

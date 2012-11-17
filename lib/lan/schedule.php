@@ -3,25 +3,25 @@ namespace lib\lan;
 /**
  * @author Karl
  */
-class Team {
+class Schedule {
 	private $start;
 	private $end;
 
 	public function __construct($timeStart, $timeStop){
 		$this->start = $timeStart;
-		$this->stop = $timeStop;
+		$this->end = $timeStop;
 	}
 
 	public function getStart(){
 		return $this->start;
 	}
-	public function set($time){
+	public function setStart($time){
 		$this->start = $time;
 	}
 	public function getEnd(){
 		return $this->end;
 	}
-	public function set($time){
+	public function setEnd($time){
 		$this->end = $time;
 	}
 	public function isIn($time){

@@ -32,6 +32,9 @@ class Game {
 	public function getId(){
 		return $this->id;
 	}
+	private function setId($id){
+		$this->id = $id;
+	}
 	public function getName(){
 		return $this->name;
 	}
@@ -76,6 +79,9 @@ class Game {
     	$req->bindValue('cover', $game->cover, PDO::PARAM_STR);
     	$req->execute();
     	$req->closeCursor();
+		if($count == 0){
+			$game->setId(DataBase::getInstance()->lastInsertId());
+		}
 	}
 	static public function getGame($id){
 		$req = DataBase::getInstance()->prepare('SELECT id, name, description, cover FROM game WHERE id = :id');

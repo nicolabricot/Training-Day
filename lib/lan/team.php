@@ -10,8 +10,8 @@ class Team {
     private $id = 0;
 	private $name;
 	private $description;
-	private array $players;
-	private array $inscriptions;
+	private $players;
+	private $inscriptions;
 
 	public function __construct(){
 		$this->players = array();
@@ -44,6 +44,9 @@ class Team {
 	}
 	public function getId(){
 		return $this->id;
+	}
+	private function setId($id){
+		$this->id = $id;
 	}
 	public function addPlayer(User $user){
 		$this->players[] = $user;
@@ -118,6 +121,9 @@ class Team {
     	$req->bindValue('description', $team->description, PDO::PARAM_STR);
     	$req->execute();
     	$req->closeCursor();
+		if($count == 0){
+			$team->setId(DataBase::getInstance()->lastInsertId());
+		}
     	//Liens utilisateurs
     	$req = DataBase::getInstance()->prepare('DELETE FROM team_player WHERE team = :id');
     	$req->bindvalue('id', $team->getId(), PDO::PARAM_INT);

@@ -9,10 +9,10 @@ class Tournament {
     private $id = 0;
 	private $name;
 	private $description;
-	private array $schedules;
+	private $schedules;
 	private $game;
 
-	public function __construct((Game) $game){
+	public function __construct(Game $game){
 		$this->game = $game;
 	}
 
@@ -32,6 +32,9 @@ class Tournament {
 
 	public function getId(){
 		return $this->id;
+	}
+	private function setId($id){
+		$this->id = $id;
 	}
 	public function addSchedule($label, Schedule $schedule){
 		$this->schedules[$label] = $schedule;
@@ -103,12 +106,15 @@ class Tournament {
     	$req->bindValue('description', $tournament->description, PDO::PARAM_STR);
     	$req->execute();
     	$req->closeCursor();
+		if($count == 0){
+			$tournament->setId(DataBase::getInstance()->lastInsertId());
+		}
     	//Jeu associé
     	$req = DataBase::getInstance()->prepare('DELETE FROM tournament_game WHERE tournament = :id');
     	$req->bindvalue('id', $tournament->getId(), PDO::PARAM_INT);
 		$req->execute();
     	$req->closeCursor();
-		$req = DataBase::getInstance()->prepare('INSERT INTO tournament_game (game, tournament) VALUES (:game, :tournament)')
+		$req = DataBase::getInstance()->prepare('INSERT INTO tournament_game (game, tournament) VALUES (:game, :tournament)');
     	$req->bindvalue('game', $tournament->getGame()->getId(), PDO::PARAM_INT);
     	$req->bindvalue('tournament', $tournament->getId(), PDO::PARAM_INT);
 		$req->execute();

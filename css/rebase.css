@@ -1,0 +1,43 @@
+/*
+ *  Reset perso [v-0.9,1]
+ *  http://nicolabricot.com
+ *
+ */
+
+html, body, form, fieldset {margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline;}
+body {line-height: 1;}
+acronym, abbr {cursor: help; border-bottom: 1px dotted #333;}
+a img {border: none;}
+label, input[type=submit] {cursor: pointer;}
+input[type=submit] {text-transform: uppercase;}
+p {margin: .75em 0;}
+ul, ol {margin: .75em 0 .75em 32px; padding: 0;}
+ul ul, ul ol, ol ol, ol ul {margin-top: 0; margin-bottom: .2em;}
+pre, code, kbd {font-family: Monaco, "Courier New", Courier, monospace; font-size: 90%;}
+pre {overflow: auto;}
+sup, sub {font-size: 80%; line-height: 50%;}
+strong {font-weight: bold;}
+em {font-style: italic;}
+del {text-decoration: line-through; color: #880000;}
+ins {text-decoration: none; color: #008800;}
+q, cite {quotes: none; font-style: italic;}
+cite:before, cite:after, q:before, q:after {content: none; content: '';}
+table {border-collapse: collapse; border-spacing: 0; margin: 1em auto;}
+td, th, tr {padding: 2px 8px; border: 1px solid #CCC;}
+thead th, tbody th {color: #555; font-weight: normal; text-align: center;}
+tbody tr:hover, tbody th:hover {background: #eee;}
+table caption {margin: 0 0 .3em 0; font-size: 90%;}
+
+/* HTML5 */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block; margin:0; padding: 0;}
+
+/*  KNACSS.COM  */
+/* avoid collapsing margins */
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, p:first-child {margin-top: 0;}
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, iframe, object, embed, video {max-width: 100%; height: auto;}
+/* you shall not pass */
+textarea, table, td, th, code, pre, samp, div, p {word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; -o-hyphens: auto; hyphens: auto;}
+code, pre, samp {white-space: pre-wrap;}
+/* @bugfix alignment */
+input, button, select {vertical-align: middle;}

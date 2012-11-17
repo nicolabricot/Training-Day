@@ -1,0 +1,25 @@
+Traing Day
+
+
+Page d'accueil :
+- Menu horizontal avec bannière
+
+
+Page de présentation ->
+	- LAN
+	- Nom de compte
+	
+Tournoi
+
+Infos Pratiques
+
+Contact ~ Mentions légales
+
+Inscription -> 
+	- liste de jeu (tournoi)
+	- nom , prénom , e-mail , compte uha ? 
+	- Login UHA ?
+	- informations complémentaires
+	- Matériel -> configuration
+
+Page 403/404/401

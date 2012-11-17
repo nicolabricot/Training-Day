@@ -57,6 +57,10 @@ header h1 a {
     -webkit-box-shadow: 0 0 10px #666;
     -moz-box-shadow: 0 0 10px #666;
     -o-box-shadow: 0 0 10px #666;
+    transition: all 2s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
 }
 header h1 a:hover,
 header h1 a:focus,
@@ -125,6 +129,9 @@ header nav#header-menu a {
 }
 #content h2 {
     font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#content h4.event {
+    
 }
 
 footer {

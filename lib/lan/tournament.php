@@ -38,6 +38,14 @@ class Tournament {
 	public function rmSchedule($label){
 		unlink($this->schedules[$label]);
 	}
+	public function inSchedule($time){
+		foreach($this->schedules as $schedule){
+			if($schedule->isIn($time)){
+				return true;
+			}
+		}
+		return false;
+	}
 	public function getName(){
 		return $this->name;
 	}

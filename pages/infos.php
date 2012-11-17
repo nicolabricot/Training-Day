@@ -1,8 +1,4 @@
-<?php
-    $subTitle = 'Infos pratiques';
-?>
-
-<h2><?php echo $subTitle; ?></h2>
+<h2>Infos pratiques</h2>
 
 <section>
     <article>

@@ -49,7 +49,7 @@ $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
         <meta name="robots" content="index, follow, archive" />
         <meta name="keywords" content="EnsiLAN, ENSISA, Nuit de l'info, Mulhouse , ingénieur, training-day"/>
         
-        <title><?php if(!empty($subTitle)) {echo $subTitle, ' &ndash; ';} ?>EnsiLAN</title>
+        <title>EnsiLAN</title>
         
         <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <link rel="stylesheet" media="screen" href="/css/style.css" />
@@ -61,7 +61,7 @@ $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
     <body>
         
         <header>
-            <h1><?php if(!empty($subTitle)) {echo $subTitle, ' &ndash; ';} ?><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
+            <h1><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
             <nav id="header-menu">
                 <?php echo $masterMenu; ?>
             </nav>

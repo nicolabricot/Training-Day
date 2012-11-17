@@ -1,5 +1,6 @@
 <?php
 namespace lib;
+namespace lib\content;
 
 spl_autoload_extensions('.php');
 spl_autoload_register();
@@ -7,6 +8,12 @@ spl_autoload_register();
 session_start();
 
 //Template maitre, les pages supplémentaires sont à mettre dans le dossier pages/
+
+// Menu principal
+$masterMenu = new Menu();
+$masterMenu->addlink('Accueil', '/');
+$masterMenu->addlink('Tournoi', '/tournoi');
+$masterMenu->addlink('Infos pratiques', '/infos-pratiques');
 
 //Affichage
 ?><!DOCTYPE html>
@@ -18,7 +25,7 @@ session_start();
         <meta name="viewport" content="width=device-width" />
         <meta name="robots" content="index, follow, archive" />
         
-        <title>EnsiLAN</title>
+        <title><?php if(!empty($subTitle)) {echo $subTitle, ' &ndash; ';} ?>EnsiLAN</title>
         
         <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <link rel="stylesheet" media="screen" href="/css/style.css" />
@@ -31,6 +38,9 @@ session_start();
         
         <header>
             <h1><a href="/" title="EnsiLAN">EnsiLAN</a></h1>
+            <nav id="header-menu">
+                <?php echo $masterMenu; ?>
+            </nav>
         </header>
         
         <div id="content">
@@ -38,7 +48,9 @@ session_start();
         </div>
         
         <footer>
-            
+            <p>Accueil | Tournoi | Infos pratiques | Mentions légales</p>
+            <p><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
+            <br />&copy; 2012 &ndash; EnsiLAN par l'équipe FKNQR&sup2;</p>
         </footer>
         
     </body>

@@ -23,7 +23,7 @@ foreach($masterMenuLinks as $page => $title){
 // Contenu de la page
 str_replace("\0", '', $_GET['page']); //Protection bytenull
 str_replace(DIRECTORY_SEPARATOR, '', $_GET['page']); //Protection navigation
-$contentPage = $_GET['page'].'.php';
+$contentPage = 'pages/'.$_GET['page'].'.php';
 $contentPage = file_exists($contentPage)?$contentPage:'errors/page-404.php';
 
 //Affichage

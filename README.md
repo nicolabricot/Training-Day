@@ -14,7 +14,7 @@ L’équipe est composée de cinq élèves de 1ère et 2ème années :
 * [Nicolas](/nicolabricot)
 * [Quentin](/aDernnell)
 * [Rémy](/Themandunord)
-* [Robin](Wailander)
+* [Robin](/Wailander)
 
 ***
 
@@ -22,7 +22,6 @@ L’équipe est composée de cinq élèves de 1ère et 2ème années :
 
 Le sujet était : “Tournoi de Jeux-Vidéo”
 
-***
 
 ## Réalisation
 
@@ -32,7 +31,7 @@ Chaque personne pourra se créer un compte sur le site, et pourra renseigner  se
 
 Chaque utilisateur pourra s'insrire dans une équipe, et ainsi participer aux tournois proposés.
 
-***
+
 
 Nous avons développer ce site en HTML5/CSS3/PHP/SQL et avec l’aide de nombreux autres outils.
 

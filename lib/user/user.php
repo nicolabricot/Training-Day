@@ -1,5 +1,7 @@
 <?php
 namespace lib\user;
+use lib\db\Database;
+use PDO;
 /**
  * @author Karl
  */
@@ -10,10 +12,8 @@ class User {
     private $name;
     private $surname;
     private $mail;
-    private $groups;
     
     public function __construct(){
-        $this->groups = array();
     }
     private function hydrate(array $datas){
         foreach($datas as $key => $value){
@@ -33,6 +33,9 @@ class User {
     }
     public function getId() {
         return $this->id;
+    }
+    private function setId($id){
+        $this->id = $id;
     }
     public function getLogin() {
         return $this->login;
@@ -75,6 +78,31 @@ class User {
         $req->closeCursor();
         return $count;
     }
+    static public function saveUser(User $user){
+        //Aiguilleur Insert/Update
+        $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM user_data WHERE id = :id');
+        $req->bindvalue('id', $user->getId(), PDO::PARAM_INT);
+        $req->execute();
+        $count = $req->fetchColumn();
+        $req->closeCursor();
+        if($count == 0){
+            $req = DataBase::getInstance()->prepare('INSERT INTO user_data (login, password, name, surname, mail) VALUES (:login, :password, :name, :surname, :mail)');
+        }
+        else{
+            $req = DataBase::getInstance()->prepare('UPDATE user_data SET (login = :login, password = :password, name = :name, surname = :surname, mail = :mail) WHERE id = :id');
+            $req->bindvalue('id', $user->getId(), PDO::PARAM_INT);
+        }
+        $req->bindValue('login', $user->getLogin(), PDO::PARAM_STR);
+        $req->bindValue('password', $user->getHashedPassword(), PDO::PARAM_STR);
+        $req->bindValue('name', $user->getName(), PDO::PARAM_STR);
+        $req->bindValue('surname', $user->getSurname(), PDO::PARAM_STR);
+        $req->bindValue('mail', $user->getMail(), PDO::PARAM_STR);
+        $req->execute();
+        $req->closeCursor();
+        if($count == 0){
+            $user->setId(DataBase::getInstance()->lastInsertId());
+        }
+    }
     static public function getUsers(){
         $users = array();
         $req = DataBase::getInstance()->prepare('SELECT id, login, password, name, surname, mail FROM user_data');
@@ -88,17 +116,14 @@ class User {
         return $users;
     }
     static public function getUser($id){
-        $users = array();
         $req = DataBase::getInstance()->prepare('SELECT id, login, password, name, surname, mail FROM user_data WHERE id = :id');
         $req->bindvalue('id', $id, PDO::PARAM_INT);
         $req->execute();
-        while($datas = $req->fetch()){
-            $user = new User();
-            $user->hydrate($datas);
-            $users[] = $user;
-        }
+        $datas = $req->fetch();
+        $user = new User();
+        $user->hydrate($datas);
         $req->closeCursor();
-        return $users;
+        return $user;
     }
 }
 

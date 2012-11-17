@@ -71,10 +71,10 @@ class Tournament {
 		$this->name = (string) $str;
 	}
 	public function getDescription(){
-		return $this->name;
+		return $this->description;
 	}
 	public function setDescription($str){
-		$this->name = (string) $str;
+		$this->description = (string) $str;
 	}
 	public function getGame(){
 		return $this->game;
@@ -126,18 +126,19 @@ class Tournament {
 		}
 	}
 	static public function getTournament($id){
-		$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournaments LEFT JOIN tournament_game ON tournament = id WHERE id = :id');
+		$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournament LEFT JOIN tournament_game ON tournament = id WHERE id = :id');
     	$req->bindvalue('id', $id, PDO::PARAM_INT);
     	$req->execute();
+    	$datas = $req->fetch();
+    	$req->closeCursor();
 		$tournament = new Tournament(Game::getGame($datas['game']));
 		$tournament->hydrate($datas);
     	$tournament->loadSchedules();
-    	$req->closeCursor();
     	return $tournament;
 	}
 	static public function getTournaments(){
 		$tournaments = array();
-    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournaments LEFT JOIN tournament_game ON tournament = id');
+    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournament LEFT JOIN tournament_game ON tournament = id');
     	$req->execute();
     	while($datas = $req->fetch()){
     		$toutnament = new Tournament(Game::getGame($datas['game']));
@@ -150,7 +151,7 @@ class Tournament {
 	}
 	static public function getTournamentsFromTeam($id){
 		$tournaments = array();
-    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournaments LEFT JOIN team_inscription ON tournament = id WHERE team = :id');
+    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournament LEFT JOIN team_inscription ON tournament = id WHERE team = :id');
     	$req->bindvalue('id', $id, PDO::PARAM_INT);
     	$req->execute();
     	while($datas = $req->fetch()){

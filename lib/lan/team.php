@@ -32,13 +32,11 @@ class Team {
         }
 	}
 	private function loadPlayers(){
-        $req = DataBase::getInstance()->prepare('SELECT id, login, password, name, surname, mail FROM user_data LEFT JOIN team_player ON player = id WHERE team = :id');
-        $req->bindvalue('id', $id, PDO::PARAM_INT);
+        $req = DataBase::getInstance()->prepare('SELECT id FROM user_data LEFT JOIN team_player ON player = id WHERE team = :id');
+        $req->bindvalue('id', $this->id, PDO::PARAM_INT);
         $req->execute();
         while($datas = $req->fetch()){
-            $user = new User();
-            $user->hydrate($datas);
-            $this->players[] = $user;
+            $this->players[] = User::getUser($datas['id']);
         }
         $req->closeCursor();
 	}
@@ -79,8 +77,8 @@ class Team {
 		return count($this->players);
 	}
 	private function loadTournaments(){
-		$req = DataBase::getInstance()->prepare('SELECT tournament FROM tournament_schedule WHERE tournament = :id');
-    	$req->bindvalue('id', $tournament->getId(), PDO::PARAM_INT);
+		$req = DataBase::getInstance()->prepare('SELECT start, stop FROM tournament_schedule WHERE tournament = :id');
+    	$req->bindvalue('id', $this->getId(), PDO::PARAM_INT);
     	$req->execute();
     	$i = 0;
     	while($datas = $req->fetch()){
@@ -129,7 +127,7 @@ class Team {
     	$req->bindvalue('id', $team->getId(), PDO::PARAM_INT);
 		$req->execute();
     	$req->closeCursor();
-		$req = DataBase::getInstance()->prepare('INSERT INTO team_player (player, team) VALUES (:player, :team)')
+		$req = DataBase::getInstance()->prepare('INSERT INTO team_player (player, team) VALUES (:player, :team)');
 		$req->bindvalue('team', $team->getId(), PDO::PARAM_INT);
 		foreach($team->getPlayers() as $player){
     		$req->bindvalue('player', $player->getId(), PDO::PARAM_INT);
@@ -141,12 +139,12 @@ class Team {
     	$req->bindvalue('id', $team->getId(), PDO::PARAM_INT);
 		$req->execute();
     	$req->closeCursor();
-		$req = DataBase::getInstance()->prepare('INSERT INTO team_inscription (tournament, team) VALUES (:tournament, :team)')
+		$req = DataBase::getInstance()->prepare('INSERT INTO team_inscription (tournament, team) VALUES (:tournament, :team)');
 		$req->bindvalue('team', $team->getId(), PDO::PARAM_INT);
 		foreach($team->getTournaments() as $tournament){
     		$req->bindvalue('tournament', $tournament->getId(), PDO::PARAM_INT);
+			$req->execute();
     	}
-		$req->execute();
     	$req->closeCursor();
 	}
 
@@ -154,6 +152,7 @@ class Team {
 		$req = DataBase::getInstance()->prepare('SELECT id, name, description FROM team WHERE id = :id');
     	$req->bindvalue('id', $id, PDO::PARAM_INT);
     	$req->execute();
+    	$datas = $req->fetch();
 		$team = new Team();
 		$team->hydrate($datas);
 		$team->loadPlayers();

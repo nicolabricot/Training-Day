@@ -87,9 +87,10 @@ class Game {
 		$req = DataBase::getInstance()->prepare('SELECT id, name, description, cover FROM game WHERE id = :id');
     	$req->bindvalue('id', $id, PDO::PARAM_INT);
     	$req->execute();
+    	$datas = $req->fetch();
+    	$req->closeCursor();
 		$game = new Game();
 		$game->hydrate($datas);
-    	$req->closeCursor();
     	return $game;
 	}
 	static public function getGames(){

@@ -15,7 +15,7 @@ spl_autoload_register();
 
 session_start();
 
-//Initialisation des jeux;
+//Initialisation des jeux pour la demo du front end;
 
 $bf3 = new Game();
 $bf3->setName('Battlefield 3');
@@ -44,13 +44,62 @@ $l4dTour->addSchedule('Après-Midi', new Schedule(1353589200, 1353603600)); //22
 $l4dTour->setName('Tournois Battlefield 3');
 $l4dTour->setDescription('Survie 4vs4 en 5 manches sur carte aléatoire - Equipes de 4 personnes - Jeu fourni sur place');
 
+//Test des elements utilisés dans le frontend
+
+$gamesList = Game::getGames();
+$countGames = Game::countGames();
+
+$tourList = Tournament::getTournaments();
+$countTour = Tournament::countTournaments();
+
+//Autres test du moteur, non implanté dans le frontend
+
+$me = new User();
+$me->setName('Karl');
+$me->setSurname('Woditsch');
+$me->setMail('k.woditsch@gmail.com');
+$me->setLogin(uniqid());
+$me->setPassword('1234');
+
+User::saveUser($me);
+
+$userList = User::getUsers();
+$countUsers = User::countUsers();
+
+$team = new Team();
+$team->setName('Les winneurs');
+$team->setDescription('Equipe de test');
+$team->addPlayer($me);
+$team->addTournament($bf3Tour);
+$team->addTournament($l4dTour);
+
+//Team::saveTeam($team);
+
+$teamList = Team::getTeams();
+$countTeams = Team::countTeams();
+$myTeams = Team::getTeamsFromUser($me->getId());
 
 echo 'Succes';
 
+echo 'INIT TEST';
 var_dump($bf3);
 var_dump($gw2);
 var_dump($l4d);
 var_dump($bf3Tour);
 var_dump($l4dTour);
+echo 'USED IN FRONTEND TEST';
+var_dump($gamesList);
+var_dump($countGames);
+var_dump($tourList);
+var_dump($countTour);
+echo 'NOT USED IN FRONTEND TEST';
+var_dump($me);
+var_dump($userList);
+var_dump($countUsers);
+var_dump($team);
+var_dump($teamList);
+var_dump($countTeams);
+var_dump($myTeams);
+echo 'END TEST';
 
 ?>

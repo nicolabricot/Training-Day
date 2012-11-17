@@ -12,6 +12,7 @@ session_start();
 // Menu principal
 $_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
 $masterMenuLinks = array('home' => 'Accueil',
+                         'games' => 'Jeux',
                          'tournaments' => 'Tournois',
                          'infos' => 'Infos-Pratiques');
 $masterMenu = new Menu();
@@ -23,7 +24,7 @@ foreach($masterMenuLinks as $page => $title){
 str_replace("\0", '', $_GET['page']); //Protection bytenull
 str_replace(DIRECTORY_SEPARATOR, '', $_GET['page']); //Protection navigation
 $contentPage = $_GET['page'].'.php';
-$contentPage = file_exists($contentPage)?$contentPage:'errors/404';
+$contentPage = file_exists($contentPage)?$contentPage:'/errors/page-404.php';
 
 //DEBUG
 
@@ -59,7 +60,7 @@ var_dump($_POST);
         </header>
         
         <div id="content">
-            <?php include($urlPage); ?>
+            <?php include($contentPage); ?>
         </div>
         
         <footer>

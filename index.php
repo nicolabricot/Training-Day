@@ -16,13 +16,13 @@ spl_autoload_register();
 session_start();
 
 //Template maitre, les pages supplémentaires sont à mettre dans le dossier pages
-
-// Menu principal
 if (empty($_GET['page'])) {
     header('Location: /home');
     exit();
 }
-$_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
+
+// Menu principal
+// $_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
 $masterMenuLinks = array('home' => 'Accueil',
                          'games' => 'Jeux',
                          'tournaments' => 'Tournois',

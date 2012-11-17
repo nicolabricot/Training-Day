@@ -18,8 +18,6 @@ L’équipe est composée de cinq élèves de 1ère et 2ème années :
 * [Rémy](/Themandunord)
 * [Robin](/Wailander)
 
-***
-
 ## Sujet
 
 Le sujet était : “Tournoi de Jeux-Vidéo”

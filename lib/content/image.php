@@ -1,12 +1,11 @@
 <?php
-namespage lib\content;
+namespace lib\content;
 /**
  * @author Karl
  */
-abstract class Image {
+class Image {
 	static public function thumb($wMax, $hMax, $imgDir, $imgSrc, $flag){
 		$thumbDir = 'thumb';
-		
 		if(file_exists($imgDir.$thumbDir.'/'.$wMax.'x'.$hMax.'_'.$flag.'_'.$imgSrc)){
 			return $imgDir.$thumbDir.'/'.$wMax.'x'.$hMax.'_'.$flag.'_'.$imgSrc;
 		}

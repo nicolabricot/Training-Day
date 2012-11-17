@@ -1,15 +1,16 @@
 <h2>Jeux</h2>
-<section class="game">
+<section class="games">
 	<?php
+use lib\content\Image;
+
+use lib\lan\Game;
 	$games = Game::getGames();
 	foreach($games as $game){
 	?>
 	    <article>
-	        <div class="image">
-	            <img src="<?php Image::thumb('250', '400', 'uploads', $game->getCover(), 'fill'); ?>" alt="" />
-	        </div>
-	        <div class="<?php $game->getTitle(); ?>"></div>
-	        <div class="<?php $game->getDescription(); ?>"></div>
+	        <img src="<?php echo Image::thumb('250', '360', 'uploads/', $game->getCover(), 'fill'); ?>" alt="" />
+	        <div class="name"><?php echo $game->getName(); ?></div>
+	        <div class="description"><?php echo $game->getDescription(); ?></div>
 	    </article>
 	<?php
 	}

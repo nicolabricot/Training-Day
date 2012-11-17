@@ -9,7 +9,9 @@ header h1 a {
     display: block;
     width: 900px;
     height: 250px;
-    margin: 0;
+    margin: 20px 0;
     text-indent: -9000px;
     background: url('/img/ensilan.png') center top no-repeat;
+    border-radius: 10px;
+    box-shadow: 4px 5px #aaa;
 }

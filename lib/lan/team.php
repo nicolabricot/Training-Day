@@ -33,7 +33,6 @@ class Team {
 	public function getPlayers(){
 		return $this->players;
 	}
-	public 
 	public function getName(){
 		return $this->name;
 	}

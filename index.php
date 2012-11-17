@@ -7,13 +7,22 @@ spl_autoload_register();
 
 session_start();
 
-//Template maitre, les pages supplémentaires sont à mettre dans le dossier pages/
+//DEBUG
+
+var_dump($_GET);
+var_dump($_POST);
+
+//Template maitre, les pages supplémentaires sont à mettre dans le dossier pages
 
 // Menu principal
+$_GET['page'] = empty($_GET['page'])?'home':$_GET['page'];
+$masterMenuLinks = array('home' => 'Accueil',
+                         'tournaments' => 'Tournois',
+                         'infos' => 'Infos-Pratiques');
 $masterMenu = new Menu();
-$masterMenu->addlink('Accueil', '/');
-$masterMenu->addlink('Tournoi', '/tournoi');
-$masterMenu->addlink('Infos pratiques', '/infos-pratiques');
+foreach($masterMenuLinks as $page => $title){
+    $masterMenu->addlink($title, $page, ($_GET['page'] == $page));
+}
 
 //Affichage
 ?><!DOCTYPE html>

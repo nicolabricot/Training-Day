@@ -1,9 +1,8 @@
 <h2>Jeux</h2>
 <section class="games">
 	<?php
-use lib\content\Image;
-
-use lib\lan\Game;
+	use lib\content\Image;
+	use lib\lan\Game;
 	$games = Game::getGames();
 	foreach($games as $game){
 	?>

@@ -1,5 +1,14 @@
 Options +FollowSymlinks -Indexes
+
+# Reecriture url
 RewriteEngine On
+
+RewriteRule ^index.html$ index.php [QSA,L]
+RewriteCond %{REQUEST_URI} !(index) [NC]
+RewriteRule ^([a-z0-9A-Z_]+)\.(php|html)$ index.php?page=$1 [QSA,L]
+RewriteRule ^([a-z0-9A-Z_]+)-([0-9]+)\.(php|html)$ index.php?page=$1&n=$2 [QSA,L]
+RewriteRule ^([a-z0-9A-Z_]+)$ index.php?page=$1 [QSA,L]
+RewriteRule ^([a-z0-9A-Z_]+)-([0-9]+)$ index.php?page=$1&n=$2 [QSA,L]
 
 # Gestion des erreurs
 ErrorDocument 401 /errors/401.php

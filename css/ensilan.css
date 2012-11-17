@@ -119,11 +119,21 @@ header nav#header-menu a {
 
 footer {
     margin: 20px auto;
-    padding-top: 5px;
-    border-top: 1px solid #2424b0;
 }
 footer p {
-    margin: 0 0 .5em 0;
-    font-size: 14px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 0 0 15px 15px;
+    -webkit-border-radius: 0 0 15px 15px;
+    -moz-border-radius: 0 0 15px 15px;
+    -o-border-radius: 0 0 15px 15px;
+    background: url('/img/footer.png') left top no-repeat;
+}
+footer p span {
+    margin-left: 20px;
+    margin-right: 450px;
+    display: inline-block;
+    vertical-align: middle;
     line-height: 18px;
+    font-size: 14px;
 }

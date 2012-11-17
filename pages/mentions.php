@@ -5,7 +5,7 @@
         <h3>Auteurs</h3>
         <p>
             EnsiLAN est un site Web créé le 17/11/12 durant le Training-Day, l'entrainement à la Nuit de l'Info. 
-            Les éditeurs de EnsiLAN (Quentin ALLENDER, Robin DENAUX, Nicolas DEVENET, Florent LACROIX, Rémy LESPAGNOL et Karl Woditsch)
+            Les éditeurs de EnsiLAN (Quentin Allender, Robin Denaux, Nicolas Devenet, Florent Lacroix, Rémy Lespagnol et Karl Woditsch)
             se réservent le droit de modifier, corriger ou suspendre le contenu du site. Nous ne saurions être tenus responsables de 
             l’utilisation qui serait faite par les internautes des informations contenues sur ce site.
         </p>

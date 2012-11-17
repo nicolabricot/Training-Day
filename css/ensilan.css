@@ -123,6 +123,7 @@ header nav#header-menu a {
 #content {
     width: 856px;
     padding: 20px;
+    overflow: hidden;
     border-left: 2px solid #333;
     border-right: 2px solid #333;
 }
@@ -131,10 +132,46 @@ header nav#header-menu a {
 }
 #content h2 {
     font-family: Bitter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
     color: #c42d2d;
 }
-#content h4.event {
-    
+#content section.aside {
+    width: 65%;
+    float: left;
+}
+
+#content aside {
+    width: 32%;
+    float: right;
+}
+#content aside.event {
+    padding: 10px 5px;
+    text-align: center;
+    border: 1px solid #635fac;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+#content .event h3 {
+    margin: 0;
+    color: #635fac;
+}
+#content .event h4 {
+    margin: 0;
+}
+#content .event a img {
+    margin: 10px 0 0 0;
+}
+#content .event a img:hover {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+    transition: all 2s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
 }
 
 footer {

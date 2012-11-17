@@ -1,8 +1,5 @@
-﻿########################################################
-########################################################
-################**Equipe IARISS**#######################
-########################################################
-########################################################
+Training Day – EnsiLAN
+=============
 
 Ce GITHUB a été conçu pour l'entraînement à la nuit de l'info à l'ENSISA de Mulhouse.
 Cette entraînement a eu lieu le samedi 17 novembre 2012 de 9h à 19h au sein de l'école.

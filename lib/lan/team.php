@@ -10,10 +10,10 @@ class Team {
 	private $description;
 	private array $players;
 
-	public __construct(){
+	public function __construct(){
 	}
 
-	public hydrate(array $datas){
+	public function hydrate(array $datas){
 		foreach($datas as $key => $value){
             switch($key){
                 case 'id':

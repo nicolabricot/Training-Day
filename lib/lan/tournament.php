@@ -11,11 +11,11 @@ class Tournament {
 	private array $schedules;
 	private $game;
 
-	public __construct((Game) $game){
+	public function __construct((Game) $game){
 		$this->game = $game;
 	}
 
-	public hydrate(array $datas){
+	public function hydrate(array $datas){
 		foreach($datas as $key => $value){
             switch($key){
                 case 'id':

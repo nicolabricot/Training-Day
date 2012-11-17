@@ -15,7 +15,7 @@ class User {
     public function __construct(){
         $this->groups = array();
     }
-    public function hydrate(array $datas, array $groups = array()){
+    private function hydrate(array $datas){
         foreach($datas as $key => $value){
             switch($key){
                 case 'id':
@@ -29,9 +29,6 @@ class User {
                     $this->$key = (string) $value;
                     break;
             }
-        }
-        foreach($groups as $group => $permissions){
-            $this->addGroup($group, $permissions);
         }
     }
     public function getId() {
@@ -71,37 +68,37 @@ class User {
         $this->mail = (string) $mail;
     }
 
-    public function getGroups(){
-        return array_keys($this->groups);
-    }
-    public function addGroup($group, $permissions){
-        if(!($permissions instanceof Permissions)){
-            $acces = new Permissions();
-            $acces->unserialize((string) $permissions);
-        }
-        else{
-            $acces =& $permissions;
-        }
-        $this->groups[(string) $group] = $acces;
-    }
-    public function rmGroup($group){
-        unset($this->groups[(string) $group]);
-    }
-
-    public function hasRight($str){
-        foreach($this->groups as $group => $permissions){
-            if($permissions->hasRight($str))
-                return true;
-        }
-        return false;
-    }
-
     static public function countUsers(){
         $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM user_data');
         $req->execute();
         $count = $req->fetchColumn();
         $req->closeCursor();
         return $count;
+    }
+    static public function getUsers(){
+        $users = array();
+        $req = DataBase::getInstance()->prepare('SELECT id, login, password, name, surname, mail FROM user_data');
+        $req->execute();
+        while($datas = $req->fetch()){
+            $user = new User();
+            $user->hydrate($datas);
+            $users[] = $user;
+        }
+        $req->closeCursor();
+        return $users;
+    }
+    static public function getUser($id){
+        $users = array();
+        $req = DataBase::getInstance()->prepare('SELECT id, login, password, name, surname, mail FROM user_data WHERE id = :id');
+        $req->bindvalue('id', $id, PDO::PARAM_INT);
+        $req->execute();
+        while($datas = $req->fetch()){
+            $user = new User();
+            $user->hydrate($datas);
+            $users[] = $user;
+        }
+        $req->closeCursor();
+        return $users;
     }
 }
 

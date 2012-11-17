@@ -6,9 +6,9 @@
 
 <section>
     <article>
-        <h3>EnsiLAN, c'est...</h3>
+        <h3>EnsiLAN, c’est...</h3>
         <ul>
-            <li>Une interface web permattant de gérer les LANs organisés à l'ENSISA.</li>
+            <li>Une interface web permattant de gérer les LANs organisés à l’ENSISA.</li>
             <li>Une inscription aux différents tournois rapide et clair</li>
             <li>Une gestion en ligne du matériel nécessaire, pour plus d'efficacité le jour J</li>
             <li>...</li>

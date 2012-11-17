@@ -12,6 +12,16 @@
         <h3>Qui est derrière EnsiLAN ?</h3>
         <p>EnsiLAN fait partie du XID, le club informatique de l’ENSISA. C’est un groupe de personnes qui vous veulent du bien en organiser les LANs \o/</p>
     </article>
+    <article>
+        <h3>Où on se donne rendez-vous ?</h3>
+        <script>
+            map = '<iframe width="425" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"'+
+                  'src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=ensisa&amp;sll=4'+
+                  '7.729221,7.310715&amp;sspn=0.007751,0.021136&amp;t=h&amp;gl=fr&amp;ie=UTF8&amp;hq=ensisa&amp;hnear'+
+                  '=&amp;ll=47.729221,7.310715&amp;spn=0.007751,0.021136&amp;output=embed"></iframe>';
+            document.write(map);
+        </script>
+    </article>
 </section>
 
 

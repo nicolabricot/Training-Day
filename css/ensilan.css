@@ -145,6 +145,7 @@ header nav#header-menu a {
 }
 #content aside.event {
     width: 25%;
+    margin-right: 20px;
     padding: 10px 5px;
     text-align: center;
     background: #fff;

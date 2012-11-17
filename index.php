@@ -7,11 +7,6 @@ spl_autoload_register();
 
 session_start();
 
-//DEBUG
-
-var_dump($_GET);
-var_dump($_POST);
-
 //Template maitre, les pages supplémentaires sont à mettre dans le dossier pages
 
 // Menu principal
@@ -23,6 +18,11 @@ $masterMenu = new Menu();
 foreach($masterMenuLinks as $page => $title){
     $masterMenu->addlink($title, $page, ($_GET['page'] == $page));
 }
+
+//DEBUG
+
+var_dump($_GET);
+var_dump($_POST);
 
 //Affichage
 ?><!DOCTYPE html>

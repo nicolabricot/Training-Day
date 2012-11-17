@@ -48,9 +48,10 @@ $masterMenu->addlink('Infos pratiques', '/infos-pratiques');
         </div>
         
         <footer>
-            <p>Accueil | Tournoi | Infos pratiques | Mentions légales</p>
-            <p><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
-            <br />&copy; 2012 &ndash; EnsiLAN par l'équipe FKNQR&sup2;</p>
+            <p>
+                <span><a href="http://xid.ensisa.info/training-day">Training Day</a> organisé par le <a href="http://xid.ensisa.info">XID</a>.
+                <br />&copy; 2012 &ndash; EnsiLAN par l'équipe FKNQR&sup2;</p>
+                </span>
         </footer>
         
     </body>

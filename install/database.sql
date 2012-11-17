@@ -29,31 +29,6 @@ CREATE TABLE IF NOT EXISTS user_in (
         REFERENCES user_permissions (id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET = utf8;
 
--- Computer
-
-CREATE TABLE IF NOT EXISTS computer (
-    id              int                     NOT NULL                AUTO_INCREMENT,
-    type            varchar(320)            NOT NULL,
-    cpu             varchar(320)            NOT NULL,
-    gpu             varchar(320)            NOT NULL,
-    ram             varchar(320)            NOT NULL,
-    screen          varchar(320)            NOT NULL,
-    drive           varchar(320)            NOT NULL,
-    optique         varchar(320)            NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
-
-CREATE TABLE IF NOT EXISTS computer_user (
-    computer        int                     NOT NULL                AUTO_INCREMENT,
-    user            int                     NOT NULL,
-    PRIMARY KEY (computer),
-    INDEX (user),
-    FOREIGN KEY (user) 
-        REFERENCES user_data (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (computer) 
-        REFERENCES computer (id) ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
-
 -- Jeux
 
 CREATE TABLE IF NOT EXISTS game (

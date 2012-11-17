@@ -27,5 +27,20 @@ class Team {
 	public function isIn($time){
 		return ($time <= $this->end && $time >= $this->start);
 	}
+
+	static public function saveSchedule($tournament, Schedule $schedule){
+		$req = DataBase::getInstance()->prepare('INSERT INTO tournament_schedule (tournament, start, stop) VALUES (:id, :start, :stop)');
+    	$req->bindvalue('id', $tournament, PDO::PARAM_INT);
+    	$req->bindvalue('start', $schedule->getStart(), PDO::PARAM_INT);
+    	$req->bindvalue('stop', $schedule->getEnd(), PDO::PARAM_INT);
+    	$req->execute();
+    	$req->closeCursor();
+	}
+	static public function deleteSchedules($tournament){
+		$req = DataBase::getInstance()->prepare('DELETE FROM tournament_schedule WHERE tournament = :id');
+    	$req->bindvalue('id', $tournament, PDO::PARAM_INT);
+		$req->execute();
+    	$req->closeCursor();
+	}
 }
 ?>

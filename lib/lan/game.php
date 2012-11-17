@@ -13,7 +13,7 @@ class Game {
 	public function __construct(){
 	}
 
-	public function hydrate(array $datas){
+	private function hydrate(array $datas){
 		foreach($datas as $key => $value){
             switch($key){
                 case 'id':
@@ -63,7 +63,6 @@ class Game {
 		$req->closeCursor();
 		return $count;
 	}
-
 	static public function saveGame(Game $game){
 	    $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM game WHERE id = :id');
     	$req->bindvalue('id', $game->getId(), PDO::PARAM_INT);
@@ -82,6 +81,27 @@ class Game {
     	$req->bindValue('cover', $game->cover, PDO::PARAM_STR);
     	$req->execute();
     	$req->closeCursor();
-	} 
+	}
+	static public function getGame($id){
+		$req = DataBase::getInstance()->prepare('SELECT id, name, description, cover FROM game WHERE id = :id');
+    	$req->bindvalue('id', $id, PDO::PARAM_INT);
+    	$req->execute();
+		$game = new Game();
+		$game->hydrate($datas);
+    	$req->closeCursor();
+    	return $game;
+	}
+	static public function getGames(){
+		$games = array();
+    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, cover FROM game');
+    	$req->execute();
+    	while($datas = $req->fetch()){
+			$game = new Game();
+			$game->hydrate($datas);
+    		$games[] = $game;
+    	}
+    	$req->closeCursor();
+    	return $games;
+	}
 }
 ?>

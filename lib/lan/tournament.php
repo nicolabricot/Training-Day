@@ -15,7 +15,7 @@ class Tournament {
 		$this->game = $game;
 	}
 
-	public function hydrate(array $datas){
+	private function hydrate(array $datas){
 		foreach($datas as $key => $value){
             switch($key){
                 case 'id':
@@ -34,6 +34,17 @@ class Tournament {
 	}
 	public function addSchedule($label, Schedule $schedule){
 		$this->schedules[$label] = $schedule;
+	}
+	public function loadSchedules(){
+		$req = DataBase::getInstance()->prepare('SELECT start, stop FROM tournament_schedule WHERE tournament = :id');
+    	$req->bindvalue('id', $tournament->getId(), PDO::PARAM_INT);
+    	$req->execute();
+    	$i = 0;
+    	while($datas = $req->fetch()){
+    		$this->addSchedule('load'.$i, new Schedule($datas['start'], $datas['stop']));
+    		$i++;
+    	}
+    	$req->closeCursor();
 	}
 	public function getSchedules(){
 		return $this->schedules;
@@ -91,11 +102,44 @@ class Tournament {
     	$req->bindValue('description', $game->description, PDO::PARAM_STR);
     	$req->execute();
     	$req->closeCursor();
-    	$req = DataBase::getInstance()->prepare('INSERT INTO tournament (name, description) VALUES (:name, :description)');
     	//Jeu associé
-
+    	$req = DataBase::getInstance()->prepare('DELETE FROM tournament_game WHERE tournament = :id');
+    	$req->bindvalue('id', $tournament->getId(), PDO::PARAM_INT);
+		$req->execute();
+    	$req->closeCursor();
+		$req = DataBase::getInstance()->prepare('INSERT INTO tournament_game (game, tournament) VALUES (:game, :tournament)')
+    	$req->bindvalue('game', $tournament->getGame()->getId(), PDO::PARAM_INT);
+    	$req->bindvalue('tournament', $tournament->getId(), PDO::PARAM_INT);
+		$req->execute();
+    	$req->closeCursor();
     	//Horaires associés
-    	
-	} 
+    	Schedule::deleteSchedules($tournament->getId());
+		foreach($this->schedules as $schedule){
+			Schedule::saveSchedule($tournament->getId(), $schedule);
+		}
+	}
+	static public function getTournament($id){
+		$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournaments LEFT JOIN tournament_game ON tournament = id WHERE id = :id');
+    	$req->bindvalue('id', $id, PDO::PARAM_INT);
+    	$req->execute();
+		$tournament = new Tournament(Game::getGame($datas['game']));
+		$tournament->hydrate($datas);
+    	$tournament->loadSchedules();
+    	$req->closeCursor();
+    	return $tournament;
+	}
+	static public function getTournaments(){
+		$tournaments = array();
+    	$req = DataBase::getInstance()->prepare('SELECT id, name, description, game FROM tournaments LEFT JOIN tournament_game ON tournament = id');
+    	$req->execute();
+    	while($datas = $req->fetch()){
+    		$toutnament = new Tournament(Game::getGame($datas['game']));
+    		$toutnament->hydrate($datas);
+    		$toutnament->loadSchedules();
+    		$tournaments[] = $toutnament;
+    	}
+    	$req->closeCursor();
+    	return $tournaments;
+	}
 }
 ?>

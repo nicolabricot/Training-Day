@@ -27,6 +27,9 @@ class Team {
         }
 	}
 
+	public function getId(){
+		return $this->id;
+	}
 	public function addPlayer(User $user){
 		$this->players[] = $user;
 	}
@@ -49,7 +52,7 @@ class Team {
 		return count($this->players);
 	}
 
-	public static function countTeams(){
+	static public function countTeams(){
 	    $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM team');
 		$req->execute();
 		$count = $req->fetchColumn();

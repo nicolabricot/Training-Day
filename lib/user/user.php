@@ -96,7 +96,7 @@ class User {
         return false;
     }
 
-    public static function countUsers(){
+    static public function countUsers(){
         $req = DataBase::getInstance()->prepare('SELECT COUNT(id) FROM user_data');
         $req->execute();
         $count = $req->fetchColumn();

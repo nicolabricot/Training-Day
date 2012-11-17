@@ -4,7 +4,7 @@ Options +FollowSymlinks -Indexes
 RewriteEngine On
 
 RewriteRule ^index.html$ index.php [QSA,L]
-RewriteCond %{REQUEST_URI} !(index) [NC]
+RewriteCond %{REQUEST_URI} !(index|init) [NC]
 RewriteRule ^([a-z0-9A-Z_]+)\.(php|html)$ index.php?page=$1 [QSA,L]
 RewriteRule ^([a-z0-9A-Z_]+)-([0-9]+)\.(php|html)$ index.php?page=$1&n=$2 [QSA,L]
 RewriteRule ^([a-z0-9A-Z_]+)$ index.php?page=$1 [QSA,L]

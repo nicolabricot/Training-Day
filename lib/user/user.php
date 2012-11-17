@@ -10,6 +10,7 @@ class User {
     private $name;
     private $surname;
     private $mail;
+    private $groups;
     
     public function __construct(){
         $this->groups = array();

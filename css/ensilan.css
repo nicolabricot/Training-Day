@@ -130,7 +130,6 @@ footer {
 footer p {
     height: 90px;
     line-height: 90px;
-    /*
     border-radius: 0 0 15px 15px;
     -webkit-border-radius: 0 0 15px 15px;
     -moz-border-radius: 0 0 15px 15px;
@@ -139,7 +138,6 @@ footer p {
     -webkit-box-shadow: 0 0 10px #666;
     -moz-box-shadow: 0 0 10px #666;
     -o-box-shadow: 0 0 10px #666;
-    */
     background: url('/img/footer.png') left top no-repeat;
 }
 footer p span {

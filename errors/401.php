@@ -21,7 +21,7 @@
 	<article>
 	  <h2>Erreur 401 : Non Autorisé — Unauthorized</h2>
 	  <h3>Oups ! L’accès à la ressource n’est pas autorisé car le serveur exige une identification de l’utilisateur.</h3>
-	  <p>Si le problème persite, vous pouvez m’envoyer un courriel à <a href="mailto:ensilan[at]ensisa.info"><code>ensilan[at]ensisa.info</code></a>.</p>
+	  <p>Si le problème persite, vous pouvez nous envoyer un courriel à <a href="mailto:xid[at]ensisa.info"><code>xid[at]ensisa.info</code></a>.</p>
 	</article>
 </div>
 	  

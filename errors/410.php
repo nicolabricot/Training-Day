@@ -21,7 +21,7 @@
 	<article>
 	  <h2>Erreur 410 : Supprimé — Gone</h2>
 	  <h3>Oups ! La ressource n’est plus disponible et aucune adresse de remplacement n’est connue.</h3>
-	  <p>Si le problème persite, vous pouvez m’envoyer un courriel à <a href="mailto:ensilan[at]ensisa.info"><code>ensilan[at]ensisa.info</code></a>.</p>
+	  <p>Si le problème persite, vous pouvez nous envoyer un courriel à <a href="mailto:xid[at]ensisa.info"><code>xid[at]ensisa.info</code></a>.</p>
 	</article>
 	</div>
 	  

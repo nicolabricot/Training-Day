@@ -1,18 +1,14 @@
-<section>
-    <article>
-        <h2>Bienvenue sur le site d'organisation de LAN de l'ENSISA !</h2>
-        <h3>Prochain LAN le 22 novembre 2012, à partir de 19h</h3>
-        <a href="#"><img src="/uploads/pages/home_inscription.png" alt="connexion" /></a>
-        <a href="#"><img src="/uploads/pages/home_more.png" alt="connexion" /></a>
-    </article>
-</section>
+<h2>Bienvenue sur le site d'organisation de LAN de l'ENSISA !</h2>
+
+<!--
 <section>
     <article>
         <h3>Accéder  l'espace membre : </h3>
-        <a href="#"><img src="/uploads/pages/connect.png" alt="connexion" /></a>
-        <a href="#"><img src="/uploads/pages/new.png" alt="connexion" /></a>
+        <a href="#"><img src="/uploads/pages/home_connect.png" alt="connexion" /></a>
+        <a href="#"><img src="/uploads/pages/home_new.png" alt="connexion" /></a>
     </article>
 </section>
+-->
 <section>
     <article>
         <h2>EnsiLAN, c'est...</h2>
@@ -22,3 +18,15 @@
         </p>
     </article>
 </section>
+
+<section>
+    <article>
+        
+    </article>
+</section>
+
+<aside>
+    <h4 class="event">Prochain LAN le 22 novembre 2012, à partir de 19h</h4>
+    <a href="#"><img src="/uploads/pages/home_inscription.png" alt="inscription" /></a>
+    <a href="#"><img src="/uploads/pages/home_more.png" alt="connexion" /></a>
+</aside>

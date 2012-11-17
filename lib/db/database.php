@@ -41,9 +41,6 @@ class DataBase {
     static function countQuery(){
         return self::$count;
     }
-    static public function lastInsertId(){
-        return self::getInstance()->lastInsertId();
-    }
 }
 
 ?>

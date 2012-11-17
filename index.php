@@ -1,6 +1,14 @@
 <?php
 namespace lib;
-namespace lib\content;
+use lib\content\Form;
+use lib\content\Image;
+use lib\content\Menu;
+use lib\content\Message;
+use lib\lan\Game;
+use lib\lan\Schedule;
+use lib\lan\Team;
+use lib\lan\Tournament;
+use lib\user\User;
 
 spl_autoload_extensions('.php');
 spl_autoload_register();
